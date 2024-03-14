@@ -3,6 +3,8 @@
 Fairtrack: Insect Monitoring with the FAIR-Device
 =================================================
 
+<img src="https://raw.githubusercontent.com/jach999/fairtrack/main/assets/fair-d_scheme.png" width="500">
+
 Overview
 --------
 
