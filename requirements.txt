@@ -1,0 +1,11 @@
+Cython==3.0.9
+-e git+https://github.com/samson-wang/cython_bbox.git@4874834e6de5c3a07c68d027edcaa62012d76ef0#egg=cython_bbox
+lap==0.4.0
+loguru==0.7.2
+nnumpy==1.22.4
+Pillow==9.4.0
+supervision==0.2.0
+torch==1.13.1
+torchvision==0.14.1
+ultralytics==8.0.53
+-e git+https://github.com/ifzhang/ByteTrack.git@d1bf0191adff59bc8fcfeaa0b33d3d1642552a99#egg=yolox
