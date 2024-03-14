@@ -73,7 +73,7 @@ Example
 
 python fairtrack_test_video.py test_assets\fdV2_5\14-05-01.mp4 --device fd1
 
-<img src="https://raw.githubusercontent.com/jach999/fairtrack/main/assets/14-05-01.jpg"  width="500">
+<img src="https://raw.githubusercontent.com/jach999/fairtrack/main/assets/14-05-01_test.mp4"  width="500">
 
 Change Log
 ----------
