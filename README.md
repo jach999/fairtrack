@@ -1,17 +1,42 @@
 * * *
 
-Fairtrack, Insect Tracking and Polygon-Zone Detection for the FAIR-Device 
-======================================================
+Fairtrack: Insect Monitoring with the FAIR-Device
+=================================================
 
-<img src="https://raw.githubusercontent.com/jach999/fairtrack/main/assets/fair-d_scheme.png" width="500">
-
-Welcome to the Fairtrack project! Our software combines various computer vision algorithms to track insects within the FAIR-Device, a non-lethal insect monitoring field-trap. Building upon the work of two scripts by SkalskiP (see credits), this project is still actively under construction.
+Overview
 --------
 
+**Fairtrack** is a project focused on developing an insect tracking system for the **Field Automatic Insect Recognizer-Device (FAIR-Device**). This script builds upon two different scripts from the same developer (see credits below). I’ve customized these algorithms for insect tracking inside the FAIR-Device.
+
+### FAIR-Device
+
+The **FAIR-Device** is a developing system for non-lethal insect field monitoring. Its goal is to offer researchers a cost-effective monitoring system that allows harmlessly and with high temporal resolution to identify and count insects on the field.
+
+Key Features
+------------
 *   **Insect Detection**: Utilizes YoloV8 for real-time insect detection in video frames.
 *   **Object Tracking**: Bytetrack ensures smooth tracking of detected insects across frames.
 *   **Polygon Zones**: Define custom polygonal zones (entrance, inside, exit) for targeted monitoring.
 *   **CSV Logging**: Logs relevant data (tracker IDs, class IDs, confidence scores) for analysis.
+
+Next-Step Goals
+---------------
+
+1.  **Algorithm Refinement**:
+    
+    *   Improve the accuracy of the insect recognition model by extending the annotated image database.
+    *   Refine the code to improve the integration between the detection system and the tracking system.
+2.  **Analyzer Script Development**:
+    
+    *   Address data inconsistencies in the _log.csv file_ generated during tracking.
+    *   Develop a metadata post-processing and analysis script to interpret insect entry and exit times and directions based on polygon activation.
+3.  **Integration with iNaturalist**:
+    
+    *   Extract high-confidence images from detected insects for uploading to the iNaturalist platform and perform taxonomic classification of insects. 
+    *   Utilize the iNaturalist API for automatic uploading the images. 
+4.  **Real time monitoring**:
+    
+    * Implement camera live-streaming for real time operation.  
 
 Installation
 ------------
@@ -24,10 +49,8 @@ Installation
 2.  Set up the environment (Python 3.7+ recommended):
     
     pip install -r requirements.txt
-    
-3.  Download YoloV8 weights (place them in the `weights` directory).
-    
 
+    
 Usage
 -----
 
@@ -76,6 +99,15 @@ This project builds upon the work of [SkalskiP](https://github.com/SkalskiP). Sp
 2.  **[how-to-detect-and-count-objects-in-polygon-zone](https://github.com/roboflow/notebooks/blob/main/notebooks/how-to-detect-and-count-objects-in-polygon-zone.ipynb)**: Here, Supervision is used for detecting and counting objects within polygonal zones.
 
 We appreciate [SkalskiP](https://github.com/SkalskiP)’s valuable contributions to the field, which inspired this work.
+
+
+Get Involved
+------------
+
+*   **Contributors**: Join us if you’re passionate about entomology, computer vision, or open-source development.
+*   **Feedback**: We welcome your ideas and suggestions.
+
+Stay tuned as we continue refining and expanding the **Fairtrack** project. Together, let’s uncover the hidden lives of insects! 🌟🐜
 
 * * *
 
