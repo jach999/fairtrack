@@ -19,7 +19,7 @@ Key Features
 *   **Insect Detection**: Utilizes YoloV8 for real-time insect detection in video frames.
 *   **Object Tracking**: Bytetrack ensures smooth tracking of detected insects across frames.
 *   **Polygon Zones**: Define custom polygonal zones (entrance, inside, exit) for targeted monitoring.
-*   **CSV Logging**: Logs relevant data (tracker IDs, class IDs, confidence scores) for analysis.
+*   **CSV Logging**: Logs relevant data (frame Nr, tracker IDs, class IDs, polygon zone, confidence scores) for analysis.
 
 Next-Step Goals
 ---------------
@@ -45,12 +45,15 @@ Installation
 
 1.  Clone this repository:
     
-    git clone https://github.com/yourusername/FAIR-Device.git
-        cd FAIR-Device
+    `git clone https://github.com/jach999/fairtrack/tree/master.git`
     
-2.  Set up the environment (Python 3.7+ recommended):
+     `cd fairtrack`
     
-    pip install -r requirements.txt
+3.  Set up the environment (Python 3.7+ recommended):
+    
+    `pip install -r requirements.txt`
+    
+    `python install install_bytrack.py`
 
     
 Usage
