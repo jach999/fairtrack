@@ -47,7 +47,7 @@ Installation
     
     `git clone https://github.com/jach999/fairtrack.git`
     
-     `cd fairtrack`
+     `cd fairtrack && mkdir runs`
     
 3.  Set up the environment (Python 3.7+ recommended):
     
