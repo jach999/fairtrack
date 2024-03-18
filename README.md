@@ -52,6 +52,8 @@ Installation
 3.  Set up the environment (Python 3.7+ recommended):
     
     `pip install -r requirements.txt`
+    
+    `python install install_bytrack.py`
 
     
 Usage
