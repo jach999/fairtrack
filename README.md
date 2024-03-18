@@ -19,7 +19,7 @@ Key Features
 *   **Insect Detection**: Utilizes YoloV8 for real-time insect detection in video frames.
 *   **Object Tracking**: Bytetrack ensures smooth tracking of detected insects across frames.
 *   **Polygon Zones**: Define custom polygonal zones (entrance, inside, exit) for targeted monitoring.
-*   **CSV Logging**: Logs relevant data (tracker IDs, class IDs, confidence scores) for analysis.
+*   **CSV Logging**: Logs relevant data (frame Nr, tracker IDs, class IDs, polygon zone, confidence scores) for analysis.
 
 Next-Step Goals
 ---------------
