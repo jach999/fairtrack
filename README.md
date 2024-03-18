@@ -45,7 +45,7 @@ Installation
 
 1.  Clone this repository:
     
-    `git clone https://github.com/jach999/fairtrack/tree/master.git`
+    `git clone https://github.com/jach999/fairtrack.git`
     
      `cd fairtrack`
     
