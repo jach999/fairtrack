@@ -77,6 +77,9 @@ Example
 
 python fairtrack_test_video.py test_assets\fdV2_5\11-17-18.mp4 --device fd1
 
+Result:
+
+
 <img src="https://raw.githubusercontent.com/jach999/fairtrack/main/assets/11-17-18_test.gif"  width="500">
 
 Change Log
