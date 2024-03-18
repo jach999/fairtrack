@@ -114,7 +114,7 @@ Get Involved
 *   **Contributors**: Join us if you’re passionate about entomology, computer vision, or open-source development.
 *   **Feedback**: We welcome your ideas and suggestions.
 
-Stay tuned as we continue refining and expanding the **Fairtrack** project. Together, let’s uncover the hidden lives of insects! 🌟🐜
+Stay tuned as we continue refining and expanding the **Fairtrack** project. Let’s make insect monitoring better! 🌟🐜
 
 * * *
 
