@@ -27,18 +27,18 @@ Next-Step Goals
 1.  **Algorithm Refinement**:
     
     *   Improve the accuracy of the insect recognition model by extending the annotated image database.
-    *   Refine the code to improve the integration between the detection system and the tracking system.
+    *   Refine the code to improve the integration between the detection and tracking system.
 2.  **Analyzer Script Development**:
     
     *   Address data inconsistencies in the _log.csv file_ generated during tracking.
-    *   Develop a metadata post-processing and analysis script to interpret insect entry and exit times and directions based on polygon activation.
+    *   Develop a metadata post-processing and analysis script to interpret insect entry- and exit- times and directions based on polygon activation.
 3.  **Integration with iNaturalist**:
     
     *   Extract high-confidence images from detected insects for uploading to the iNaturalist platform and perform taxonomic classification of insects. 
-    *   Utilize the iNaturalist API for automatic uploading the images. 
-4.  **Real time monitoring**:
+    *   Utilize the iNaturalist API for automatically uploading the images. 
+4.  **Real-time monitoring**:
     
-    * Implement camera live-streaming for real time operation.  
+    * Implement camera live-streaming for real-time operation.  
 
 Installation
 ------------
@@ -65,7 +65,7 @@ Usage
     python fairtrack_test_video.py path/to/source_video.mp4 [path/to/target_video.mp4]
     *   `source_video`: Path to the input video.
     *   `target_video` (optional): Path to save the tracked video & .csv file (default: `runs/run#/source_video_test.mp4`).
-    *   `--device` (optional): Specify the device used for the captured video (fd1, fd2, fd3 or fd4) - this corrects some framing differences between devices.
+    *   `--device` (optional): Specify the device used for the captured video (fd1, fd2, fd3, or fd4) - this corrects some framing differences between devices.
         
 2.  Adjust polygon zones in `device_polygons.py`.
     
@@ -117,7 +117,7 @@ Get Involved
 *   **Contributors**: Join us if you’re passionate about entomology, computer vision, or open-source development.
 *   **Feedback**: We welcome your ideas and suggestions.
 
-Stay tuned as we continue refining and expanding the **Fairtrack** project. Let’s make insect monitoring better! 🌟🐜
+Stay tuned as we continue refining and expanding the **Fairtrack** project. Let’s make insect monitoring way better! 🌟🐜
 
 * * *
 
