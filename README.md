@@ -45,12 +45,12 @@ Installation
 
 1.  Clone this repository:
     
-    git clone https://github.com/yourusername/FAIR-Device.git
-        cd FAIR-Device
+    `git clone https://github.com/jach999/fairtrack.git`
+        `cd fairtrack`
     
 2.  Set up the environment (Python 3.7+ recommended):
     
-    pip install -r requirements.txt
+    `pip install -r requirements.txt`
 
     
 Usage
