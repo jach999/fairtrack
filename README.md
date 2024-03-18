@@ -54,7 +54,7 @@ Installation
     `pip install -r requirements.txt`
     
     `python install_bytetrack.py`
-4
+
 
     
 Usage
@@ -82,7 +82,7 @@ python fairtrack_test_video.py test_assets\fdV2_5\11-17-18.mp4 --device fd1
 Change Log
 ----------
 
-*   **v1.0.0 (March 2024)**:
+*   **v1.0 (March 2024)**:
     *   Initial release.
     *   YoloV8 for insect detection.
     *   Bytetrack for tracking.
