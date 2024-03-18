@@ -51,7 +51,7 @@ if __name__ == "__main__":
                                                  
         args.target_video = os.path.join(HOME, new_run_folder_path, f"{source_video_name}_test.mp4")
 
-    SOURCE_VIDEO_PATH = args.source_video
+    SOURCE_VIDEO_PATH =SOURCE_VIDEO_PATH = os.path.join(args.source_video)
     TARGET_VIDEO_PATH = args.target_video
 
 selected_device = args.device

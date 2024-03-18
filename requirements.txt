@@ -1,3 +1,4 @@
+ninja==1.11.1.1
 Cython==3.0.9
 cython_bbox==0.1.5
 lap==0.4.0

@@ -22,6 +22,7 @@ def install_bytetrack():
     import yolox
     print("yolox.__version__:", yolox.__version__)
     print("ByteTrack installation completed successfully!")
-
+    os.chdir(HOME)
+    
 if __name__ == "__main__":
     install_bytetrack()
