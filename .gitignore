@@ -1,0 +1,9 @@
+old/
+folder_structre.txt
+runs/
+install.py
+install_bytrack.py
+ByteTrack/
+src/
+.conda/
+test_assets/fdV2_5/fd2/17-20-02.mp4

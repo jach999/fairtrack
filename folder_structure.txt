@@ -1,0 +1,39 @@
+fairtrack/
+│
+├── src/
+│   ├── main_tracking.py
+│   ├── utils.py
+│   └── ...
+│
+├── weights/
+│   ├── insect_detection.weights
+│   ├── insect_tracking.weights
+│   └── ...
+│
+├── ByteTrack/
+│   ├── byte_track_module.py
+│   ├── config.yaml
+│   └── ...
+│
+├── runs/
+│   ├── run_1/
+│   │   ├── logs.txt
+│   │   ├── results.json
+│   │   └── ...
+│   ├── run_2/
+│   └── ...
+│
+├── test_assets/
+│   ├── example_image.jpg
+│   ├── test_video.mp4
+│   └── ...
+│
+├── polygons/
+│   ├── zone1_polygon.json
+│   ├── zone2_polygon.json
+│   └── ...
+│
+└── assets/
+    ├── device_logo
+    ├── device_scheme
+    └── ...
