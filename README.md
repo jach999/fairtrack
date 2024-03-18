@@ -54,6 +54,7 @@ Installation
     `pip install -r requirements.txt`
     
     `python install_bytetrack.py`
+4
 
     
 Usage
@@ -92,7 +93,7 @@ Author
 ------
 
 *   Juan A. Chiavassa
-*   Email: juan.chiavassa.gmail.com
+*   Email: juan.chiavassa@gmail.com
 
 
 Credits
