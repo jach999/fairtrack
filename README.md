@@ -64,9 +64,9 @@ Usage
     
     python fairtrack_test_video.py path/to/source_video.mp4 [path/to/target_video.mp4]
     *   `source_video`: Path to the input video.
-    *   `target_video` (optional): Path to save the tracked video (default: `runs/source_video_test.mp4`).
-    *   `--device` (optional) you can specify the device used for the captured video (fd1, fd2, fd3 or fd4)
-         this corrects some framing differences between devices
+    *   `target_video` (optional): Path to save the tracked video & .csv file (default: `runs/run#/source_video_test.mp4`).
+    *   `--device` (optional): Specify the device used for the captured video (fd1, fd2, fd3 or fd4) - this corrects some framing differences between devices.
+        
 2.  Adjust polygon zones in `device_polygons.py`.
     
 3.  View the tracked video and analyze the CSV log.
@@ -87,6 +87,7 @@ Change Log
     *   YoloV8 for insect detection.
     *   Bytetrack for tracking.
     *   Polygon zones defined.
+    *   .csv logging
 
 
 Author
