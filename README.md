@@ -53,7 +53,7 @@ Installation
     
     `pip install -r requirements.txt`
     
-    `python install install_bytrack.py`
+    `python install_bytrack.py`
 
     
 Usage
