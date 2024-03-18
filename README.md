@@ -45,10 +45,11 @@ Installation
 
 1.  Clone this repository:
     
-    `git clone [https://github.com/jach999/fairtrack](https://github.com/jach999/fairtrack/tree/master).git`
-        `cd fairtrack`
+    `git clone https://github.com/jach999/fairtrack/tree/master.git`
     
-2.  Set up the environment (Python 3.7+ recommended):
+     `cd fairtrack`
+    
+3.  Set up the environment (Python 3.7+ recommended):
     
     `pip install -r requirements.txt`
 
