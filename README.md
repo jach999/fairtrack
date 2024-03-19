@@ -75,7 +75,7 @@ Usage
 Example
 -------
 
-python fairtrack_test_video.py test_assets\fdV2_5\11-17-18.mp4 --device fd1
+python fairtrack_test_video.py test_assets\fdV2_5\fd1\11-17-18.mp4 --device fd1
 
 Result:
 
