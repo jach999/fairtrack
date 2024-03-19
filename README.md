@@ -23,22 +23,22 @@ Key Features
 
 Next-Step Goals
 ---------------
+1.  **Real-time monitoring**:
+    
+    * Implement camera live-streaming for real-time operation.  
 
-1.  **Algorithm Refinement**:
+2.  **Algorithm Refinement**:
     
     *   Improve the accuracy of the insect recognition model by extending the annotated image database.
     *   Refine the code to improve the integration between the detection and tracking system.
-2.  **Analyzer Script Development**:
+4.  **Analyzer Script Development**:
     
     *   Address data inconsistencies in the _log.csv file_ generated during tracking.
     *   Develop a metadata post-processing and analysis script to interpret insect entry- and exit- times and directions based on polygon activation.
-3.  **Integration with iNaturalist**:
+5.  **Integration with [iNaturalist](https://www.inaturalist.org/)**:
     
     *   Extract high-confidence images from detected insects for uploading to the iNaturalist platform and perform taxonomic classification of insects. 
-    *   Utilize the iNaturalist API for automatically uploading the images. 
-4.  **Real-time monitoring**:
-    
-    * Implement camera live-streaming for real-time operation.  
+    *   Implement the **[iNaturalist VisionAPI](https://rapidapi.com/inaturalist-inaturalist-default/api/visionapi)** for automatically uploading the images. 
 
 Installation
 ------------
