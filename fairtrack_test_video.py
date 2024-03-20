@@ -149,7 +149,7 @@ def process_frame(frame: np.ndarray, i: int) -> np.ndarray:
     class_id = results[0].boxes.cls.cpu().numpy().astype(int)
 
     detections = sv.Detections(xyxy, confidence, class_id)
-    detections = detections[(detections.class_id == 1) & (detections.confidence > 0.6)]
+    detections = detections[(detections.class_id == 1) & (detections.confidence > 0.5)]
 
     # tracking detections
     tracks = byte_tracker.update(
