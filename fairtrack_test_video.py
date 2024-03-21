@@ -31,8 +31,8 @@ os.makedirs(new_run_folder_path, exist_ok=True)
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Insect Tracking Script")
-    parser.add_argument("source_video", help="Path to the source video file")
-    parser.add_argument("target_video", nargs="?", default=None, help="Path to save the tracked video)")
+    parser.add_argument("source_file", help="Path to the source video file")
+    parser.add_argument("target_file", nargs="?", default=None, help="Path to save the tracked video)")
     parser.add_argument("--device", choices=["fd1", "fd2", "fd3", "fd4"], default="fd1",
                         help="Select the device (fd1, fd2, fd3, fd4)")
     return parser.parse_args()
@@ -41,26 +41,34 @@ if __name__ == "__main__":
     args = parse_args()
 
 # Set default target video path if not provided
-    if args.target_video is None:
+    if args.target_file is None:
 
          # Extract the filename from the source video path
-        source_video_filename = os.path.basename(args.source_video)
+        source_file_filename = os.path.basename(args.source_file)
 
         # Remove the file extension (e.g., ".mp4") if present
-        source_video_name, _ = os.path.splitext(source_video_filename)
+        source_file_name, _ = os.path.splitext(source_file_filename)
                                                  
-        args.target_video = os.path.join(HOME, new_run_folder_path, f"{source_video_name}_test.mp4")
+        args.target_file = os.path.join(HOME, new_run_folder_path, f"{source_file_name}_test.mp4")
+    else:
+        # If a target video path is provided, use it directly
+        args.target_file = os.path.abspath(args.target_file)
 
-    SOURCE_VIDEO_PATH =SOURCE_VIDEO_PATH = os.path.join(args.source_video)
-    TARGET_VIDEO_PATH = args.target_video
+# Define SOURCE_FILE_PATH and TARGET_FILE_PATH        
+SOURCE_FILE_PATH = os.path.abspath(args.source_file)
+TARGET_FILE_PATH = args.target_file
+
+# Extract the filename from the target video path Remove the file extension  if present
+target_file_filename = os.path.basename(args.target_file)
+target_file_name, _ = os.path.splitext(target_file_filename)
 
 selected_device = args.device
 
 # Folder target directory
-target_directory = os.path.dirname(TARGET_VIDEO_PATH)
+target_directory = os.path.dirname(TARGET_FILE_PATH)
 
 # Make a path for a .csv file of the event
-path = os.path.join(HOME, new_run_folder_path, f"{source_video_name}_test_log.csv")
+path = os.path.join(HOME, new_run_folder_path, f"{target_file_name}_log.csv")
 
 model = YOLO(f"{HOME}/weights/1_class/best.pt")
 model.fuse()
@@ -71,7 +79,7 @@ CLASS_NAMES_DICT = model.model.names
 byte_tracker = BYTETracker(BYTETrackerArgs())
 
 # Extract width and height from video
-video_info = sv.VideoInfo.from_video_path(SOURCE_VIDEO_PATH)
+video_info = sv.VideoInfo.from_video_path(SOURCE_FILE_PATH)
 video_width = video_info.width
 video_height = video_info.height
 
@@ -206,4 +214,4 @@ def process_frame(frame: np.ndarray, i: int) -> np.ndarray:
 
     return frame
 
-sv.process_video(source_path=SOURCE_VIDEO_PATH, target_path=TARGET_VIDEO_PATH, callback=process_frame)
+sv.process_video(source_path=SOURCE_FILE_PATH, target_path=TARGET_FILE_PATH, callback=process_frame)

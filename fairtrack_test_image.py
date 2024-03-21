@@ -32,8 +32,8 @@ os.makedirs(new_run_folder_path, exist_ok=True)
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Insect Tracking Script")
-    parser.add_argument("source_image", help="Path to the source image file")
-    parser.add_argument("target_image", nargs="?", default=None, help="Path to save the tracked image)")
+    parser.add_argument("source_file", help="Path to the source image file")
+    parser.add_argument("target_file", nargs="?", default=None, help="Path to save the tracked image)")
     parser.add_argument("--device", choices=["fd1", "fd2", "fd3", "fd4"], default="fd1",
                         help="Select the device (fd1, fd2, fd3, fd4)")
     return parser.parse_args()
@@ -42,26 +42,34 @@ if __name__ == "__main__":
     args = parse_args()
 
 # Set default target image path if not provided
-    if args.target_image is None:
+    if args.target_file is None:
 
          # Extract the filename from the source image path
-        source_image_filename = os.path.basename(args.source_image)
+        source_file_filename = os.path.basename(args.source_file)
 
         # Remove the file extension (e.g., ".jpg") if present
-        source_image_name, _ = os.path.splitext(source_image_filename)
+        source_file_name, _ = os.path.splitext(source_file_filename)
                                                  
-        args.target_image = os.path.join(HOME, new_run_folder_path, f"{source_image_name}_test.jpg")
+        args.target_file = os.path.join(HOME, new_run_folder_path, f"{source_file_name}_test.jpg")
+    else:
+        # If a target image path is provided, use it directly
+        args.target_file = os.path.abspath(args.target_file)
 
-    SOURCE_IMAGE_PATH = args.source_image
-    TARGET_IMAGE_PATH = args.target_image
+# Define SOURCE_FILE_PATH and TARGET_FILE_PATH        
+SOURCE_FILE_PATH = os.path.abspath(args.source_file)
+TARGET_FILE_PATH = args.target_file
+
+# Extract the filename from the target image path Remove the file extension  if present
+target_file_filename = os.path.basename(args.target_file)
+target_file_name, _ = os.path.splitext(target_file_filename)
 
 selected_device = args.device
 
 # Folder target directory
-target_directory = os.path.dirname(TARGET_IMAGE_PATH)
+target_directory = os.path.dirname(TARGET_FILE_PATH)
 
 # Make a path for a .csv file of the event
-path = os.path.join(HOME, new_run_folder_path, f"{source_image_name}_test_log.csv")
+path = os.path.join(HOME, new_run_folder_path, f"{target_file_name}_log.csv")
 
 model = YOLO(f"{HOME}/weights/1_class/best.pt")
 model.fuse()
@@ -72,9 +80,9 @@ CLASS_NAMES_DICT = model.model.names
 byte_tracker = BYTETracker(BYTETrackerArgs())
 
 # Get the height and width using numpy.shape
-image_size = cv2.imread(SOURCE_IMAGE_PATH)
+image_size = cv2.imread(SOURCE_FILE_PATH)
 image_height, image_width, _ = image_size.shape
-video_info = sv.VideoInfo.from_video_path(SOURCE_IMAGE_PATH)
+video_info = sv.VideoInfo.from_video_path(SOURCE_FILE_PATH)
 
 scaled_polygon1 = polygons.fdV2_5_polygons.normalized_polygon1 * np.array([image_width, image_height])
 #scaled_polygon2 = polygons.fdV2_5_polygons.normalized_polygon2 * np.array([image_width, image_height])
@@ -131,7 +139,7 @@ box_annotators = [
 ]
 
 # extract video frame
-generator = sv.get_video_frames_generator(SOURCE_IMAGE_PATH)
+generator = sv.get_video_frames_generator(SOURCE_FILE_PATH)
 iterator = iter(generator)
 frame = next(iterator)
 
@@ -201,6 +209,6 @@ with open(path, 'a', newline='') as csvfile:
 
 
 # Save the frame as an image
-cv2.imwrite(TARGET_IMAGE_PATH, frame)
+cv2.imwrite(TARGET_FILE_PATH, frame)
 
 
