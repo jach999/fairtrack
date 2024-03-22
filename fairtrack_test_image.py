@@ -205,10 +205,9 @@ for zone, zone_annotator, box_annotator in zip(zones, zone_annotators, box_annot
 with open(path, 'a', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerows(csv_data)
-    print(f"Data written to {path}")
-
+    
 
 # Save the frame as an image
 cv2.imwrite(TARGET_FILE_PATH, frame)
 
-
+print(f"Data written to {target_directory}")

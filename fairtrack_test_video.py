@@ -209,9 +209,10 @@ def process_frame(frame: np.ndarray, i: int) -> np.ndarray:
     with open(path, 'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(csv_data)
-        print(f"Data written to {path}")
-
+       
 
     return frame
 
 sv.process_video(source_path=SOURCE_FILE_PATH, target_path=TARGET_FILE_PATH, callback=process_frame)
+
+print(f"Data written to {target_directory}")
