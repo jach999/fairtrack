@@ -60,16 +60,16 @@ SOURCE_FILE_PATH = os.path.abspath(args.source_file)
 TARGET_FILE_PATH = args.target_file
 
 # Extract the filename from the target image path Remove the file extension  if present
-target_file_filename = os.path.basename(args.target_file)
+target_file_filename = os.path.basename(TARGET_FILE_PATH)
 target_file_name, _ = os.path.splitext(target_file_filename)
-
-selected_device = args.device
-
 # Folder target directory
 target_directory = os.path.dirname(TARGET_FILE_PATH)
 
+
+selected_device = args.device
+
 # Make a path for a .csv file of the event
-path = os.path.join(HOME, new_run_folder_path, f"{target_file_name}_log.csv")
+path = os.path.join(HOME, target_directory, f"{target_file_name}_log.csv")
 
 model = YOLO(f"{HOME}/weights/1_class/best.pt")
 model.fuse()
