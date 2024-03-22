@@ -84,7 +84,7 @@ Result:
 
 &nbsp;
 
-**Test script in Colab!** &nbsp;
+**Test script in Colab** &nbsp;
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jach999/fairtrack/blob/master/fairtrack.ipynb)
 
 &nbsp;
