@@ -82,6 +82,10 @@ Result:
 
 <img src="https://raw.githubusercontent.com/jach999/fairtrack/main/assets/11-17-18_test.gif"  width="500">
 
+
+**Test script in Colab** &nbsp;
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jach999/fairtrack/blob/master/fairtrack.ipynb)
+
 Change Log
 ----------
 
@@ -117,7 +121,8 @@ Get Involved
 *   **Contributors**: Join us if you’re passionate about entomology, computer vision, or open-source development.
 *   **Feedback**: We welcome your ideas and suggestions.
 
-Stay tuned as we continue refining and expanding the **Fairtrack** project. 
+Stay tuned as we continue refining and expanding the **Fairtrack** project.
+
 Let’s make insect monitoring way better!🌟🐜
 
 * * *
