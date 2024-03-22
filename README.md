@@ -82,9 +82,12 @@ Result:
 
 <img src="https://raw.githubusercontent.com/jach999/fairtrack/main/assets/11-17-18_test.gif"  width="500">
 
+&nbsp;
 
-**Test script in Colab** &nbsp;
+**Test script in Colab!** &nbsp;
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jach999/fairtrack/blob/master/fairtrack.ipynb)
+
+&nbsp;
 
 Change Log
 ----------
