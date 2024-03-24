@@ -38,7 +38,7 @@ Next-Step Goals
 5.  **Integration with [iNaturalist](https://www.inaturalist.org/)**:
     
     *   Extract high-confidence images from detected insects for uploading to the iNaturalist platform and perform taxonomic classification of insects. 
-    *   Implement the **[iNaturalist VisionAPI](https://rapidapi.com/inaturalist-inaturalist-default/api/visionapi)** for automatically uploading the images. 
+    *   Implement the [iNaturalist VisionAPI](https://rapidapi.com/inaturalist-inaturalist-default/api/visionapi) for automatically uploading the images. 
 
 Installation
 ------------
