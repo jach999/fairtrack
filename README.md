@@ -8,7 +8,7 @@ Fairtrack: Insect Monitoring with the FAIR-Device
 Overview
 --------
 
-**Fairtrack** is a project focused on developing an insect tracking system for the **Field Automatic Insect Recognizer-Device (FAIR-Device**). This script builds upon two different scripts from the same developer (see credits below). I’ve customized these algorithms for insect tracking inside the FAIR-Device.
+**Fairtrack** is a project focused on developing an insect tracking system for the **Field Automatic Insect Recognizer-Device (FAIR-Device**). This script builds upon two different scripts from the same developer (see credits below). We have customized these algorithms for insect tracking inside the FAIR-Device.
 
 ### FAIR-Device
 
