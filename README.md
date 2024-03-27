@@ -3,7 +3,7 @@
 Fairtrack: Insect Monitoring with the FAIR-Device
 =================================================
 
-<img src="https://raw.githubusercontent.com/jach999/fairtrack/main/assets/fair-d_scheme.png" width="500">
+<img src="https://raw.githubusercontent.com/jach999/fairtrack/master/assets/fair-d_scheme.png" width="700">
 
 Overview
 --------
@@ -12,7 +12,7 @@ Overview
 
 ### FAIR-Device
 
-The **FAIR-Device** is a developing system for non-lethal insect field monitoring. Its goal is to offer researchers a cost-effective monitoring system that allows harmlessly and with high temporal resolution to identify and count insects on the field.
+The **FAIR-Device** is a developing system designed for non-lethal insect field monitoring. Its primary objective is to provide researchers with a cost-effective monitoring solution that allows for the harmless identification and counting of insects in the field with high temporal resolution. This device is currently under development as part of the [Diabek](https://diabek.hswt.de/en/) project, which is one of the 14 digital experimental fields initiated by the [Federal Ministry of Food and Agriculture (BMEL)](https://www.bmel.de/EN/Home/home_node.html). The aim of this project is to examine digital technologies for agriculture and evaluate their practical suitability. The project is being conducted at the [Biomass Institute](https://www.biomasseinstitut.de/) within [Weihenstephan-Triesdorf University](https://www.hswt.de/en/).
 
 Key Features
 ------------
@@ -104,7 +104,9 @@ Author
 ------
 
 *   Juan A. Chiavassa
-*   Email: juan.chiavassa@gmail.com
+*   Email: juan.chiavassa@hswt.com / juan.chiavassa@gmail.com
+*   Project: Digitalisierung – anwenden, bewerten und kommunizieren - [Diabek](https://diabek.hswt.de/)
+*   Location: [Biomass Institute](https://www.biomasseinstitut.de/), [Weihenstephan-Triesdorf University](https://www.hswt.de/en/), Merkendorf, Germany
 
 
 Credits
