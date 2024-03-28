@@ -119,7 +119,7 @@ This project builds upon the work of [SkalskiP](https://github.com/SkalskiP). Sp
 1.  **[how-to-track-and-count-vehicles-with-yolov8](https://github.com/roboflow/notebooks/blob/main/notebooks/how-to-track-and-count-vehicles-with-yolov8.ipynb)**: This script leverages Bytetrack for vehicle tracking using YoloV8.
 2.  **[how-to-detect-and-count-objects-in-polygon-zone](https://github.com/roboflow/notebooks/blob/main/notebooks/how-to-detect-and-count-objects-in-polygon-zone.ipynb)**: Here, Supervision is used for detecting and counting objects within polygonal zones.
 
-We appreciate [SkalskiP](https://github.com/SkalskiP)’s valuable contributions to the field, which inspired this work.
+We appreciate SkalskiP’s valuable contributions to the field, which inspired this work.
 
 
 Get Involved
