@@ -2,6 +2,8 @@
 
 Fairtrack: Insect Monitoring with the FAIR-Device
 =================================================
+[![DOI bioRxiv](https://img.shields.io/badge/bioRxiv-10.1101%2F2024.03.22.586299-B31B1B)](https://doi.org/10.1101/2024.03.22.586299)
+&nbsp;
 
 <img src="https://raw.githubusercontent.com/jach999/fairtrack/master/assets/fair-d_scheme.png" width="700">
 
