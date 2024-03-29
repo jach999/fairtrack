@@ -18,7 +18,7 @@ The **FAIR-Device** is a developing system designed for non-lethal insect field 
 
 Key Features
 ------------
-*   **Insect Detection**: Utilizes [YoloV8](https://github.com/ultralytics/ultralytics) for real-time insect detection in video frames (check [here](https://universe.roboflow.com/juan-chiavassa/fair-device_v2.0) the image dataset).
+*   **Insect Detection**: Utilizes custom trained [YoloV8](https://github.com/ultralytics/ultralytics) for real-time insect detection in video frames (check [here](https://universe.roboflow.com/juan-chiavassa/fair-device_v2.0) the image dataset).
 *   **Object Tracking**: [Bytetrack](https://github.com/ifzhang/ByteTrack) ensures smooth tracking of detected insects across frames.
 *   **Polygon Zones**: With [Supervision](https://github.com/roboflow/supervision), we implement custom polygonal zones (entrance, inside, exit) for targeted monitoring.
 *   **CSV Logging**: Logs relevant data (frame Nr, tracker IDs, class IDs, polygon zone, confidence scores) for analysis.
