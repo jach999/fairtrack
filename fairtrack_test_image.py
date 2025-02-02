@@ -78,7 +78,7 @@ elif args.model == "39_class":
 # Make a path for a .csv file of the event
 path = os.path.join(HOME, target_directory, f"{target_file_name}_log.csv")
 
-model = YOLO(f"{HOME}/weights/{model_path}"
+model = YOLO(f"{HOME}/weights/{model_path}")
 model.fuse()
 
 CLASS_NAMES_DICT = model.model.names
