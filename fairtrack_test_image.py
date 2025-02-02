@@ -34,8 +34,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Insect Tracking Script")
     parser.add_argument("source_file", help="Path to the source image file")
     parser.add_argument("target_file", nargs="?", default=None, help="Path to save the tracked image)")
-    parser.add_argument("--device", choices=["fd1", "fd2", "fd3", "fd4"], default="fd1",
-                        help="Select the device (fd1, fd2, fd3, fd4)")
+    parser.add_argument("--device", choices=["fd1", "fd2", "fd3", "fd4"], default="fd1", help="Select the device (fd1, fd2, fd3, fd4)")
+    parser.add_argument("--model", choices=["1_class", "3_class", "39_class"], default="1_class", help="Select the AI-model type (1, 2, or 39 classes)")
     return parser.parse_args()
 
 if __name__ == "__main__":
@@ -68,10 +68,17 @@ target_directory = os.path.dirname(TARGET_FILE_PATH)
 
 selected_device = args.device
 
+if args.model == "1_class":
+    model_path = "1_class/best.pt"
+elif args.model == "3_class":
+    model_path = "3_class/best.pt"
+elif args.model == "39_class":
+    model_path = "39_class/best.pt"    
+        
 # Make a path for a .csv file of the event
 path = os.path.join(HOME, target_directory, f"{target_file_name}_log.csv")
 
-model = YOLO(f"{HOME}/weights/1_class/best.pt")
+model = YOLO(f"{HOME}/weights/{model_path}"
 model.fuse()
 
 CLASS_NAMES_DICT = model.model.names
