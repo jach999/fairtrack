@@ -8,16 +8,21 @@ def install_bytetrack():
     # Clone the ByteTrack repository
     os.system("git clone https://github.com/ifzhang/ByteTrack.git")
 
-    # Install dependencies
     os.chdir("ByteTrack")
-    os.system("pip install -q -r requirements.txt")
     os.system("python setup.py -q develop")
 
-    # Install additional packages
-    os.system("pip install -q cython_bbox")
-    os.system("pip install -q lap")
-    os.system("pip install -q loguru") 
-    os.system("pip install -q onemetric")
+    # Install packages
+    os.system("pip install onemetric")
+    os.system("pip install -opencv-python")
+    os.system("pip install scikit-image")
+    os.system("pip install tqdm")
+    os.system("pip install thop")
+    os.system("pip install tabulate")
+    os.system("pip install tensorboard")
+    os.system("pip install motmetrics")
+    os.system("pip install filterpy")
+    os.system("pip install h5py")
+
     # Print success message
     import yolox
     print("yolox.__version__:", yolox.__version__)
