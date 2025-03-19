@@ -72,7 +72,7 @@ Usage
     *   `--model` (optional): Select the type of model:
         * 1 class (insect)
         * 3 classes (insect sizes: large, medium, and small)
-        * 40 classes (pseudo-taxonomic or functional classification, which recognizes different insects of the orders Diptera, Hymenoptera, Coleoptera, Lepidoptera, Orthoptera, among others)
+        * 39 classes (pseudo-taxonomic or functional classification, which recognizes different insects of the orders Diptera, Hymenoptera, Coleoptera, Lepidoptera, Orthoptera, among others)
 
         
 2.  Adjust polygon zones in `device_polygons.py`.
