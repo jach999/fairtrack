@@ -83,7 +83,7 @@ Usage
 Example
 -------
 
-python fairtrack_test_video.py test_assets\fdV2_5\fd1\11-17-18.mp4 --device fd1
+python fairtrack_test_video.py test_assets\fdV2_5\fd1\11-17-18.mp4 --device fd1 --model 1_class
 
 Result:
 
@@ -112,7 +112,7 @@ Author
 ------
 
 *   Juan A. Chiavassa
-*   Email: juan.chiavassa@hswt.com / juan.chiavassa@gmail.com
+*   Email: juan.chiavassa@gmail.com
 *   Project: Digitalisierung – anwenden, bewerten und kommunizieren - [Diabek](https://diabek.hswt.de/)
 *   Location: [Biomass Institute](https://www.biomasseinstitut.de/), [Weihenstephan-Triesdorf University](https://www.hswt.de/en/), Merkendorf, Germany
 
