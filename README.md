@@ -69,6 +69,11 @@ Usage
     *   `source_video`: Path to the input video.
     *   `target_video` (optional): Path to save the tracked video & .csv file (default: `runs/run#/source_video_test.mp4`).
     *   `--device` (optional): Specify the device used for the captured video (fd1, fd2, fd3, or fd4) - this corrects some framing differences between devices.
+    *   `--model` (optional): Select the type of model:
+        * 1 class (insect)
+        * 3 classes (insect sizes: large, medium, and small)
+        * 40 classes (pseudo-taxonomic or functional classification, which recognizes different insects of the orders Diptera, Hymenoptera, Coleoptera, Lepidoptera, Orthoptera, among others)
+
         
 2.  Adjust polygon zones in `device_polygons.py`.
     

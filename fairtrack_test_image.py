@@ -35,7 +35,7 @@ def parse_args():
     parser.add_argument("source_file", help="Path to the source image file")
     parser.add_argument("target_file", nargs="?", default=None, help="Path to save the tracked image)")
     parser.add_argument("--device", choices=["fd1", "fd2", "fd3", "fd4"], default="fd1", help="Select the device (fd1, fd2, fd3, fd4)")
-    parser.add_argument("--model", choices=["1_class", "3_class", "39_class"], default="1_class", help="Select the AI-model type (1, 2, or 39 classes)")
+    parser.add_argument("--model", choices=["1_class", "3_class", "40_class"], default="1_class", help="Select the AI-model type (1, 2, or 39 classes)")
     return parser.parse_args()
 
 if __name__ == "__main__":
@@ -73,8 +73,8 @@ if args.model == "1_class":
     class_number = 1
 elif args.model == "3_class":
     model_path = "3_class/best.pt"
-elif args.model == "39_class":
-    model_path = "39_class/best.pt"
+elif args.model == "40_class":
+    model_path = "40_class/best.pt"
         
 # Make a path for a .csv file of the event
 path = os.path.join(HOME, target_directory, f"{target_file_name}_log.csv")
@@ -166,7 +166,7 @@ if args.model == "1_class":
     # For 1-class and 3-class models, filter by class_number
     detections = detections[(detections.class_id == class_number) & (detections.confidence > 0.5)]
 else:
-    # For 39-class model, process all detections with confidence > 0.5
+    # For 40-class model, process all detections with confidence > 0.5
     detections = detections[detections.confidence > 0.5]
 
                         
