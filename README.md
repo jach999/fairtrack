@@ -97,6 +97,13 @@ Result:
 
 &nbsp;
 
+## Model training
+
+You can train your own custom model
+
+- **YOLOv8 detection model training** &nbsp;
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jach999/fairtrack/blob/master/notebooks/fairtrack_train_yolov8_object_detection_on_custom_dataset.ipynb)
+
 Change Log
 ----------
 
