@@ -32,14 +32,24 @@ os.makedirs(new_run_folder_path, exist_ok=True)
 def parse_args():
     parser = argparse.ArgumentParser(description="Insect Tracking Script")
     parser.add_argument("source_file", help="Path to the source video file")
-    parser.add_argument("target_file", nargs="?", default=None, help="Path to save the tracked video)")
+    parser.add_argument("target_file", nargs="?", default=None, help="Path to save the tracked video")
     parser.add_argument("--device", choices=["fd1", "fd2", "fd3", "fd4"], default="fd1",
                         help="Select the device (fd1, fd2, fd3, fd4)")
-    parser.add_argument("--model", choices=["1_class", "3_class", "39_class"], default="1_class", help="Select the AI-model type (1, 2, or 39 classes)")
-    return parser.parse_args()
+    parser.add_argument("--model", choices=["1_class", "3_class", "39_class"], default="1_class",
+                        help="Select the AI-model type (1, 2, or 39 classes)")
+    parser.add_argument("--conf", type=float, default=0.5,
+                        help="Detection confidence threshold (a float between 0.1 and 0.9)")
+    args = parser.parse_args()
+
+    # Validate the range for --conf
+    if not (0.1 <= args.conf <= 0.9):
+        parser.error("--conf must be a float between 0.1 and 0.9")
+
+    return args
 
 if __name__ == "__main__":
     args = parse_args()
+    detection_conf = args.conf  # Assign the confidence threshold to a variable
 
 # Set default target video path if not provided
     if args.target_file is None:
@@ -156,69 +166,6 @@ inside_polygon_shape = inside_polygon.shape
 exit_polygon_shape = exit_polygon.shape
 
 
-'''# loop over video frames
-def process_frame(frame: np.ndarray, i: int) -> np.ndarray:
-    print('frame', i)
- 
-    # model prediction on single frame and conversion to supervision Detections
-    results = model(frame, imgsz=(video_width, video_height))
-    xyxy = results[0].boxes.xyxy.cpu().numpy()
-    confidence = results[0].boxes.conf.cpu().numpy()
-    class_id = results[0].boxes.cls.cpu().numpy().astype(int)
-
-    detections = sv.Detections(xyxy, confidence, class_id)
-    if args.model == "1_class":
-        # For 1-class, filter by class_number
-        detections = detections[(detections.class_id == class_number) & (detections.confidence > 0.5)]
-    else:
-        # For 39-class model and 3-class models, process all detections with confidence > 0.5
-        detections = detections[detections.confidence > 0.5]
-        
-    # tracking detections
-    tracks = byte_tracker.update(
-    output_results=detections2boxes(detections=detections),
-    img_info=frame.shape,
-    img_size=frame.shape
-        )
-    tracker_id = match_detections_with_tracks(detections=detections, tracks=tracks)
-    detections.tracker_id = np.array(tracker_id)
-
-   # filtering out detections without trackers
-    mask = np.array([tracker_id is not None for tracker_id in detections.tracker_id], dtype=bool)
-    detections.filter(mask=mask, inplace=True)
-
-    # Annotate the frame with zone polygons (using draw_polygon function)
-    for zone, zone_annotator, box_annotator in zip(zones, zone_annotators, box_annotators):
-        frame = draw_polygon(
-            scene=frame,
-            polygon=zone.polygon,
-            color=zone_annotator.color,
-            thickness=zone_annotator.thickness
-        )
-
-        # specified polygon zone trigger
-        mask = zone.trigger(detections=detections)
-        detections_filtered = detections[mask]
-
-        labels = []  # Initialize an empty list for labels
-        for _, confidence, class_id, tracker_id in detections_filtered:
-            if zone.polygon.shape == entrance_polygon_shape:
-                zone_name = "Entrance"
-            elif zone.polygon.shape == inside_polygon_shape:
-                zone_name = "Inside"
-            elif zone.polygon.shape == exit_polygon_shape:
-                zone_name = "Exit"
-            else:
-                zone_name = "Unknown"
-
-            labels.append(f"#{tracker_id} {CLASS_NAMES_DICT[class_id]} {confidence:.2f} {zone_name}")  # Add labels
-            csv_data.append([i, tracker_id, CLASS_NAMES_DICT[class_id], zone_name, confidence, xyxy])
-            print(f"{CLASS_NAMES_DICT[class_id]} #{tracker_id} detected in {zone_name} polygon")
-    
-
-        # Annotate the frame
-        frame = box_annotator.annotate(scene=frame, detections=detections_filtered, labels=labels)'''
-
 def process_frame(frame: np.ndarray, i: int) -> np.ndarray:
     print('frame', i)
 
@@ -235,10 +182,10 @@ def process_frame(frame: np.ndarray, i: int) -> np.ndarray:
     # Conditional filtering based on the model used
     if args.model == "1_class":
         # For 1-class model, filter by class_number
-        detections = detections[(detections.class_id == class_number) & (detections.confidence > 0.5)]
+        detections = detections[(detections.class_id == class_number) & (detections.confidence > detection_conf)]
     else:
         # For 3-class and 39-class models, process all detections with confidence > 0.5
-        detections = detections[detections.confidence > 0.5]
+        detections = detections[detections.confidence > detection_conf]
 
     # Tracking detections
     tracks = byte_tracker.update(
