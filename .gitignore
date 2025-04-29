@@ -8,6 +8,7 @@ src/
 .conda/
 test_assets/fdV2_5/fd2/17-20-02.mp4
 folder_structure.txt
-models/39_class/old
-__pycache__
-myenv
+models/39_class/old/
+__pycache__/
+myenv/
+id/
