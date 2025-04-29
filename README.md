@@ -58,6 +58,12 @@ Installation
     
     `python install_bytetrack.py`
 
+4. Correct some compatibility issues:
+
+    `python /content/fairtrack/utils/correct_np_variables.py`
+   
+    `python /content/fairtrack/utils/correct_np_supervision_variables.py`
+
 
     
 Usage
