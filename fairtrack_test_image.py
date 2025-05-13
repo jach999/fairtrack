@@ -18,8 +18,15 @@ HOME = os.path.dirname(__file__)
 
 print(HOME)
 
+#Function to ensure the "runs" directory exists
+def ensure_runs_directory(base_directory):
+    if not os.path.exists(base_directory):
+        os.makedirs(base_directory)
+        print(f"Created '{base_directory}' directory.")
+        
 # Specify the base directory where you want to create the new folders
 base_run_directory = "runs"
+ensure_runs_directory(base_run_directory)  # Ensure "runs" exists
 
 # Determine the next folder name (e.g., "run1", "run2", etc.)
 existing_run_folders = [folder for folder in os.listdir(base_run_directory) if folder.startswith("run")]

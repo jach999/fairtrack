@@ -17,8 +17,15 @@ HOME = os.path.dirname(__file__)
 
 print(HOME)
 
+#Function to ensure the "runs" directory exists
+def ensure_runs_directory(base_directory):
+    if not os.path.exists(base_directory):
+        os.makedirs(base_directory)
+        print(f"Created '{base_directory}' directory.")
+        
 # Specify the base directory where you want to create the new folders
 base_run_directory = "runs"
+ensure_runs_directory(base_run_directory)  # Ensure "runs" exists
 
 # Determine the next folder name (e.g., "run1", "run2", etc.)
 existing_run_folders = [folder for folder in os.listdir(base_run_directory) if folder.startswith("run")]
@@ -249,16 +256,11 @@ def process_frame(frame: np.ndarray, i: int) -> np.ndarray:
         # Annotate the frame
         frame = box_annotator.annotate(scene=frame, detections=detections_filtered, labels=labels)
 
-    return frame
-
-
-
-    # Write data to CSV
+        # Write data to CSV
     with open(path, 'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(csv_data)
        
-
     return frame
 
 sv.process_video(source_path=SOURCE_FILE_PATH, target_path=TARGET_FILE_PATH, callback=process_frame)

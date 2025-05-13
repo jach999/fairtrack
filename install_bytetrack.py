@@ -11,18 +11,6 @@ def install_bytetrack():
     os.chdir("ByteTrack")
     os.system("python setup.py -q develop")
 
-    # Install packages
-    os.system("pip install onemetric")
-    os.system("pip install -opencv-python")
-    os.system("pip install scikit-image")
-    os.system("pip install tqdm")
-    os.system("pip install thop")
-    os.system("pip install tabulate")
-    os.system("pip install tensorboard")
-    os.system("pip install motmetrics")
-    os.system("pip install filterpy")
-    os.system("pip install h5py")
-
     # Print success message
     import yolox
     print("yolox.__version__:", yolox.__version__)

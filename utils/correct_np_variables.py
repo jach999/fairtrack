@@ -1,10 +1,24 @@
 import os
 
-# List of files to modify
+# Get the absolute path of the 'utils' directory (where this script is running)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Navigate back to the 'fairtrack' directory (parent of 'utils')
+FAIRTRACK_DIR = os.path.dirname(SCRIPT_DIR)
+
+# Construct the correct path to the target file inside 'ByteTrack/yolox/tracker'
+byte_tracker_path = os.path.join(FAIRTRACK_DIR, "ByteTrack", "yolox", "tracker", "byte_tracker.py")
+
+# Check if the file exists before proceeding
+if not os.path.exists(byte_tracker_path):
+    print(f"Error: File not found at {byte_tracker_path}")
+else:
+    print("File path resolved successfully!")
+
+# List of files to modify (using os.path.join for cross-platform compatibility)
 files_to_modify = [
-    '/content/fairtrack/ByteTrack/yolox/tracker/byte_tracker.py',
-    '/content/fairtrack/ByteTrack/yolox/tracker/matching.py',
-    # Add other files here if needed
+    os.path.join(FAIRTRACK_DIR, "ByteTrack", "yolox", "tracker", "byte_tracker.py"),
+    os.path.join(FAIRTRACK_DIR, "ByteTrack", "yolox", "tracker", "matching.py"),
 ]
 
 # Function to replace 'np.bool' with 'np.bool_' and 'np.float' with 'np.float64'

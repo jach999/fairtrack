@@ -43,29 +43,58 @@ Next-Step Goals
     *   Extract high-confidence images from detected insects for uploading to the iNaturalist platform and perform taxonomic classification of insects. 
     *   Implement the iNaturalist VisionAPI for automatically uploading the images. 
 
-Installation
+Installation Guide
 ------------
 
+**Option 1: Installation with `pip`**
 1.  Clone this repository:
+```bash    
+git clone https://github.com/jach999/fairtrack.git
+cd fairtrack && mkdir runs
+```
     
-    `git clone https://github.com/jach999/fairtrack.git`
-    
-     `cd fairtrack && mkdir runs`
-    
-3.  Set up the environment (Python 3.7+ recommended):
-    
-    `pip install -r requirements.txt`
-    
-    `python install_bytetrack.py`
+2.  Set up the environment (Python 3.7+ recommended):
+```bash    
+pip install -r requirements.txt
+```
+
+3.  Install ByteTrack:    
+```bash    
+python install_bytetrack.py
+```
 
 4. Correct some compatibility issues:
+```bash
+python utils/correct_np_variables.py
+python utils/correct_np_supervision_variables.py
+```
 
-    `python /content/fairtrack/utils/correct_np_variables.py`
-   
-    `python /content/fairtrack/utils/correct_np_supervision_variables.py`
 
-
+**Option 2: Installation with `conda`**
+1.  Clone this repository:
+```bash    
+git clone https://github.com/jach999/fairtrack.git
+cd fairtrack && mkdir runs
+```
     
+2.  Create and activate the Conda environment:
+```bash    
+conda env create --file fairtrack.yml
+conda activate fairtrack
+```
+
+3.  Install ByteTrack:    
+```bash    
+python install_bytetrack.py
+```
+
+4. Correct some compatibility issues:
+```bash
+python utils/correct_np_variables.py
+python utils/correct_np_supervision_variables.py
+```
+
+
 Usage
 -----
 
