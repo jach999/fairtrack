@@ -1,10 +1,17 @@
 import os
-import sys
 import site
 
-# Get the correct path to 'site-packages' dynamically
-site_packages_path = site.getsitepackages()[0]  # Gets the first site-packages directory
-supervision_path = os.normpath(os.path.join(site_packages_path, "lib\site-packages\supervision\detection\core.py"))  # Construct full path
+# Correct path of 'site-packages' 
+site_packages_path = site.getsitepackages()[0]
+
+# File to modify path
+supervision_path = os.path.normpath(os.path.join(site_packages_path, "supervision/detection/core.py"))
+
+# Verify if file exists
+if not os.path.exists(supervision_path):
+    print(f"Error: file not found in: {supervision_path}")
+else:
+    print(f"File found in: {supervision_path}")
 
 # List of files to modify (now using dynamic path detection)
 files_to_modify = [supervision_path]
