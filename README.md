@@ -1,6 +1,6 @@
 * * *
 
-Fairtrack: Insect Monitoring with the FAIR-Device
+Fairtrack: An AI-powered Insect Trackig System for the FAIR-Device
 =================================================
 [![DOI Wiley](https://img.shields.io/badge/Wiley-doi.org%2F10.1002%2Fece3.70642-black
 )](https://doi.org/10.1002/ece3.70642)
